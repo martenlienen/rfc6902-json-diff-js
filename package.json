@@ -1,0 +1,25 @@
+{
+  "name": "rfc6902-json-diff",
+  "version": "0.1.0",
+  "description": "JSON diff according to RFC6902",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:CQQL/rfc6902-json-diff-js.git"
+  },
+  "keywords": [
+    "json",
+    "diff",
+    "rfc",
+    "6902"
+  ],
+  "author": "Marten Lienen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/CQQL/rfc6902-json-diff-js/issues"
+  },
+  "homepage": "https://github.com/CQQL/rfc6902-json-diff-js"
+}
