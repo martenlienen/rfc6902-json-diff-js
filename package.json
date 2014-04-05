@@ -4,7 +4,7 @@
   "description": "JSON diff according to RFC6902",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node_modules/.bin/mocha"
   },
   "repository": {
     "type": "git",
@@ -21,5 +21,12 @@
   "bugs": {
     "url": "https://github.com/CQQL/rfc6902-json-diff-js/issues"
   },
-  "homepage": "https://github.com/CQQL/rfc6902-json-diff-js"
+  "homepage": "https://github.com/CQQL/rfc6902-json-diff-js",
+  "dependencies": {
+    "lodash": "2.4.1",
+    "json-pointer": "0.1.0"
+  },
+  "devDependencies": {
+    "mocha": "1.18.2"
+  }
 }
