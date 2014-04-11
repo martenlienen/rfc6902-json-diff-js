@@ -23,7 +23,11 @@ describe("Generating diffs", function () {
   });
 
   describe("for arrays", function () {
+    it("should not replace elements unnecessarily", function () {
+      var d = diff([1, 3, 4, 5, 6], [1, 2, 3, 4, 5, 6]);
 
+      assert.deepEqual(d, [{ op: "add", path: "/1", value: 2 }]);
+    });
   });
 
   describe("for nested objects", function () {
