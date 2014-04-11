@@ -1,6 +1,3 @@
-var mocha = require("mocha");
-var describe = mocha.describe;
-var it = mocha.it;
 var assert = require("assert");
 var diff = require("../");
 

@@ -2,7 +2,7 @@
   "name": "rfc6902-json-diff",
   "version": "0.1.0",
   "description": "JSON diff according to RFC6902",
-  "main": "index.js",
+  "main": "lib/diff.js",
   "scripts": {
     "test": "node_modules/.bin/mocha"
   },
