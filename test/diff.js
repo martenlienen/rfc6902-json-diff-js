@@ -28,6 +28,34 @@ describe("Generating diffs", function () {
 
       assert.deepEqual(d, [{ op: "add", path: "/1", value: 2 }]);
     });
+
+    it("should generate `remove` operations", function () {
+      var d = diff([1, 2, 3, 4, 5], [1, 3, 5]);
+
+      assert.deepEqual(d, [{ op: "remove", path: "/1" }, { op: "remove", path: "/2" }]);
+    });
+
+    it("should generate `replace` operations", function () {
+      var d = diff([1, 2, 3, 4, 5], [1, "a", 3, true, 5]);
+
+      assert.deepEqual(d, [{ op: "replace", path: "/1", value: "a" },
+                           { op: "replace", path: "/3", value: true }]);
+    });
+
+    it("should keep correct path values when mixing operations", function () {
+      var d = diff([1, 2, 3, 4, 5], [true, 2, 4, 5, 6]);
+
+      assert.deepEqual(d, [{ op: "replace", path: "/0", value: true },
+                           { op: "remove", path: "/2" },
+                           { op: "add", path: "/4", value: 6 }]);
+    });
+
+    it("should generate sub diffs when replacing", function () {
+      var d = diff([1, { key: 1337 }, "b"], [1, { key: 6077, name: "cqql" }, "b"]);
+
+      assert.deepEqual(d, [{ op: "replace", path: "/1/key", value: 6077 },
+                           { op: "add", path: "/1/name", value: "cqql" }]);
+    });
   });
 
   describe("for nested objects", function () {
