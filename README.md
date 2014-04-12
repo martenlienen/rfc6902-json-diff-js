@@ -1,5 +1,7 @@
 # JSON diff according to RFC6902
 
+[![Build Status](https://travis-ci.org/CQQL/rfc6902-json-diff-js.svg?branch=master)](https://travis-ci.org/CQQL/rfc6902-json-diff-js)
+
 Diff two JS objects and recieve an RFC6902 JSON patch.
 
 ```js
