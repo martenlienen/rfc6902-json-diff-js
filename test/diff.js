@@ -77,4 +77,52 @@ describe("Generating diffs", function () {
       assert.deepEqual(d, [{ op: "replace", path: "/top", value: "string" }]);
     });
   });
+
+  describe("for complex objects", function () {
+    it("should generate a correct diff", function () {
+      var d = diff(
+        {
+          name: "BananaShake",
+          ingredients: [
+            {
+              name: "Milk",
+              amount: 50,
+              unit: "ml"
+            },
+            {
+              name: "Banana",
+              amount: 20,
+              unit: "slices"
+            }
+          ]
+        },
+        {
+          name: "Bananashake",
+          ingredients: [
+            {
+              name: "Milk",
+              amount: 250,
+              unit: "ml"
+            },
+            {
+              name: "Icecream",
+              amount: 10,
+              unit: "spoons"
+            },
+            {
+              name: "Banana",
+              amount: 20,
+              unit: "slices"
+            }
+          ]
+        }
+      );
+
+      assert.deepEqual(d, [{ op: "replace", path: "/name", value: "Bananashake" },
+                           { op: "add", path: "/ingredients/0", value: { name: "Milk", amount: 250, unit: "ml" } },
+                           { op: "replace", path: "/ingredients/1/name", value: "Icecream" },
+                           { op: "replace", path: "/ingredients/1/amount", value: 10 },
+                           { op: "replace", path: "/ingredients/1/unit", value: "spoons" }]);
+    });
+  });
 });
