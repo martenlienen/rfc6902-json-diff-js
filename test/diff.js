@@ -20,6 +20,10 @@ describe("Generating diffs", function () {
 
       assert.deepEqual(d, [{ op: "replace", path: "/name", value: "no" }]);
     });
+
+    it("should not replace unchanged properties", function () {
+      assert.deepEqual(diff({ name: "CQQL" }, { name: "CQQL" }), []);
+    });
   });
 
   describe("for arrays", function () {
