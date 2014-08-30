@@ -60,6 +60,15 @@ describe("Generating diffs", function () {
       assert.deepEqual(d, [{ op: "replace", path: "/1/key", value: 6077 },
                            { op: "add", path: "/1/name", value: "cqql" }]);
     });
+
+    // This generated a stack overflow in earlier versions
+    it("should remove all items when diffing with an empty array", function () {
+      var d = diff([1], []);
+
+      assert.deepEqual(d, [{ op: "remove", path: "/0" }]);
+    });
+
+
   });
 
   describe("for nested objects", function () {
