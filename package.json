@@ -23,10 +23,10 @@
   },
   "homepage": "https://github.com/CQQL/rfc6902-json-diff-js",
   "dependencies": {
-    "lodash": "2.4.1",
-    "json-pointer": "0.1.0"
+    "lodash": "^2.4",
+    "json-pointer": "^0.2"
   },
   "devDependencies": {
-    "mocha": "1.18.2"
+    "mocha": "^1.18"
   }
 }
