@@ -68,7 +68,13 @@ describe("Generating diffs", function () {
       assert.deepEqual(d, [{ op: "remove", path: "/0" }]);
     });
 
+    // Make sure, that we do not try to read the length of the _second_ line. It
+    // may not exist -.-
+    it("should not fail, when an element has been added to an empty array", function () {
+      var d  = diff([], [1]);
 
+      assert.deepEqual(d, [{ op: "add", path: "/0", value: 1 }]);
+    });
   });
 
   describe("for nested objects", function () {
