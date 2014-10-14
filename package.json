@@ -1,6 +1,6 @@
 {
   "name": "rfc6902-json-diff",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "JSON diff according to RFC6902",
   "main": "lib/diff.js",
   "scripts": {
