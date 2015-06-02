@@ -1,6 +1,6 @@
 # JSON diff according to RFC6902
 
-[![Build Status](https://travis-ci.org/CQQL/rfc6902-json-diff-js.svg?branch=master)](https://travis-ci.org/CQQL/rfc6902-json-diff-js)
+[![Build Status](https://travis-ci.org/cqql/rfc6902-json-diff-js.svg?branch=master)](https://travis-ci.org/cqql/rfc6902-json-diff-js)
 
 Diff two JS objects and receive an [RFC6902](http://tools.ietf.org/html/rfc6902)
 JSON patch.
@@ -23,7 +23,7 @@ console.log(patch);
 The current implementation only uses the `add`, `remove` and `replace`
 operation. Usage of `move` and `copy` can and may be added later and I am always
 open for pull requests, but they are not needed to generate patches for every
-possible modification. Your patches will just be a bit bigger, than they would
+possible modification. Your patches will just be a bit bigger than they would
 be with `move` and `copy`.
 
 Arrays are diffed with the
