@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:CQQL/rfc6902-json-diff-js.git"
+    "url": "git@github.com:cqql/rfc6902-json-diff-js.git"
   },
   "keywords": [
     "json",
@@ -19,9 +19,9 @@
   "author": "Marten Lienen",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/CQQL/rfc6902-json-diff-js/issues"
+    "url": "https://github.com/cqql/rfc6902-json-diff-js/issues"
   },
-  "homepage": "https://github.com/CQQL/rfc6902-json-diff-js",
+  "homepage": "https://github.com/cqql/rfc6902-json-diff-js",
   "dependencies": {
     "json-pointer": "^0.2",
     "lodash": "^3.1.0"
